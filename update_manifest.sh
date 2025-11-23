@@ -1,7 +1,7 @@
 #!/bin/bash
 
 VERSION=1.29
-GIT_TAG=v1.29.0.3
+GIT_TAG=v1.29.0.4
 BASE_GIT_URL=https://github.com/LordOfDragons
 BASE_URL_ARTIFACTS=https://dragondreams.s3.eu-central-1.amazonaws.com/dragengine/extern
 MANIFEST=ch.dragondreams.deigde.yml
