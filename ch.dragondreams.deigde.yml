@@ -67,6 +67,7 @@ modules:
       - '/share/katepart5'
       - '/share/mime/packages/ch.dragondreams.delauncher-mime.xml'
       - '/share/mime/packages/dragonscript-dragonscript.xml'
+      - '/share/icons/hicolor/*/mimetypes/ch.dragondreams.delauncher-*.png'
       
     sources:
       - type: git
