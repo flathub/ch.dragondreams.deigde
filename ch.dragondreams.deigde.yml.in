@@ -53,6 +53,8 @@ modules:
             with_verbose=no \
             with_threads=$FLATPAK_BUILDER_N_JOBS \
             with_engine_module_checks=no \
+            build_guilauncher=no \
+            build_consolelauncher=no \
             version="$ReleaseVersion" \
               install_engine_runtime \
               install_igde_runtime \
@@ -62,6 +64,7 @@ modules:
               deigde
     
     cleanup:
+      - '/share/katepart5'
       - '/bin/delauncher*'
       - '/share/applications/ch.dragondreams.delauncher.desktop'
       - '/share/icons/hicolor/*/apps/ch.dragondreams.delauncher.png'
@@ -70,6 +73,7 @@ modules:
       - '/share/metainfo/ch.dragondreams.delauncher.metainfo.xml'
       - '/share/mime/packages/ch.dragondreams.delauncher-mime.xml'
       - '/share/mime/packages/dragonscript-dragonscript.xml'
+      - '/share/icons/hicolor/*/mimetypes/ch.dragondreams.delauncher-*.png'
       - '/share/pixmaps/ch.dragondreams.delauncher.png'
       - '/share/katepart5/syntax'
 
