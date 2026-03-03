@@ -39,7 +39,7 @@ modules:
     buildsystem: simple
     build-options:
       env:
-        ReleaseVersion: '1.29.1'
+        ReleaseVersion: '1.30.2'
     only-arches:
       - x86_64
 
@@ -53,8 +53,6 @@ modules:
             with_verbose=no \
             with_threads=$FLATPAK_BUILDER_N_JOBS \
             with_engine_module_checks=no \
-            build_guilauncher=no \
-            build_consolelauncher=no \
             version="$ReleaseVersion" \
               install_engine_runtime \
               install_igde_runtime \
@@ -64,15 +62,21 @@ modules:
               deigde
     
     cleanup:
-      - '/share/katepart5'
+      - '/bin/delauncher*'
+      - '/share/applications/ch.dragondreams.delauncher.desktop'
+      - '/share/icons/hicolor/*/apps/ch.dragondreams.delauncher.png'
+      - '/share/icons/hicolor/*/mimetypes/ch.dragondreams.delauncher-*.png'
+      - '/share/man/man1/delauncher-*.1'
+      - '/share/metainfo/ch.dragondreams.delauncher.metainfo.xml'
       - '/share/mime/packages/ch.dragondreams.delauncher-mime.xml'
       - '/share/mime/packages/dragonscript-dragonscript.xml'
-      - '/share/icons/hicolor/*/mimetypes/ch.dragondreams.delauncher-*.png'
-      
+      - '/share/pixmaps/ch.dragondreams.delauncher.png'
+      - '/share/katepart5/syntax'
+
     sources:
       - type: git
         url: https://github.com/LordOfDragons/dragengine.git
-        tag: 'v1.29.1'
+        tag: 'v1.30.2'
 
       - type: file
         url: https://dragondreams.s3.eu-central-1.amazonaws.com/dragengine/extern/eossdk/eossdk-1.17.0.zip
@@ -87,10 +91,10 @@ modules:
         dest-filename: eossdk_bin_linux-1.17.0.tar.xz
 
       - type: file
-        url: https://dragondreams.s3.eu-central-1.amazonaws.com/dragengine/extern/fox/fox-1.7.67.tar.bz2
-        sha256: ae4d0ffbb466cb976b726f8042388ac033cee869876932a3dba30d865f78b017
+        url: https://dragondreams.s3.eu-central-1.amazonaws.com/dragengine/extern/fox/fox-1.7.85.tar.xz
+        sha256: 0ceac3c63117043de9b64733e1c0754365556e8141d4e91c4d1487843ad9efb0
         dest: extern/fox
-        dest-filename: fox-1.7.67.tar.bz2
+        dest-filename: fox-1.7.85.tar.xz
 
       - type: file
         url: https://dragondreams.s3.eu-central-1.amazonaws.com/dragengine/extern/liburing/liburing-liburing-2.6.tar.bz2
@@ -153,10 +157,10 @@ modules:
         dest-filename: libevdev-1.5.6.tar.bz2
 
       - type: file
-        url: https://dragondreams.s3.eu-central-1.amazonaws.com/dragengine/extern/dragonscript/dragonscript-1.5.tar.xz
-        sha256: 4369ff880d0e4f42e9556be5600013b4cd370151123cd5cc3aa622de6593ef58
+        url: https://dragondreams.s3.eu-central-1.amazonaws.com/dragengine/extern/dragonscript/dragonscript-1.5.1.tar.xz
+        sha256: d8914ea2b04437418ef431c88d052bf592f82663e92fa675fb03b0abe8ab6c9a
         dest: extern/dragonscript
-        dest-filename: dragonscript-1.5.tar.xz
+        dest-filename: dragonscript-1.5.1.tar.xz
 
       - type: file
         url: https://dragondreams.s3.eu-central-1.amazonaws.com/dragengine/extern/soundtouch/soundtouch-2.1.1.tar.bz2
