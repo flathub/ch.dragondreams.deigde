@@ -13,8 +13,9 @@ finish-args:
   #- --filesystem=host
   - --filesystem=xdg-documents
   - --filesystem=~/deprojects:create
-  # required for input devices (gamepad) 
-  - --device=all
+  - --device=dri
+  - --device=input
+  - --device-if=all:!has-input-device
 
 modules:
   - name: scons
@@ -135,7 +136,7 @@ modules:
 
       - type: file
         url: https://github.com/LordOfDragons/denetwork/releases/download/v1.2/denetworkcpp-unix-x64-1.2.tar.bz2
-        sha256: ff608d43b23601a2699f6a4cd96491732797550e42e44a00adb3823a84551da0
+        sha256: 9bf4c82ef36bb327bf097023213c3b98878c03452412365f024cb5feec596a7d
         dest: extern/denetwork
         dest-filename: denetworkcpp-unix-x64-1.2.tar.bz2
 
